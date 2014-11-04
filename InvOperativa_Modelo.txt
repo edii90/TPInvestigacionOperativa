@@ -1,0 +1,313 @@
+public class ModeloCantidadFija
+{
+private double _cantidadOptimaQ; //Q
+private double _costoAnualPedido; //S
+private double _costoAnualMantennimiento; //H
+private int _leadTime; //L
+private int _demandaAnual; //D
+private double _demandaDiaria; //d
+private int _diasLaborales;
+private double _costoTotal; //TC
+private double _costoUnitario; //C
+private double _puntoReorden; //R
+private double _nroLotesAnual;
+private double _tiempoEntreLotes; //T
+private double _costoTotalAnualPedido; //(D/Q).S
+private double _costoTotalAnualMantenimiento; //(Q/2).H 
+private double _costoTotalAnualDeCompras; // D*C
+
+public double CantidadOptimaQ()
+{
+_cantidadOptimaQ = System.Math.Sqrt( (2 * __demandaAnual * _costoAnualPedido)/ _costoAnualMantennimiento);
+return _cantidadOptimaQ;
+}
+
+public double CostoTotalAnualPedido()
+{
+_costoTotalAnualPedido = (_demandaAnual / _cantidadOptimaQ)* _costoAnualPedido;
+return _costoTotalAnualPedido;
+}
+
+public double CostoTotalAnualMantenimiento()
+{
+_costoTotalAnualMantenimiento = ( _cantidadOptimaQ / 2 ) * _costoAnualMantennimiento;
+return _costoTotalAnualMantenimiento;
+}
+
+public double CostoTotalAnualDeCompras()
+{
+_costoTotalAnualDeCompras = _demandaAnual * _costoUnitario;
+return _costoTotalAnualDeCompras;
+}
+
+public double CostoTotal()
+{
+_costoTotal = CostoTotalAnualDeCompras() + CostoTotalAnualMantenimiento() + CostoTotalAnualPedido();
+return _costoTotal;
+}
+
+public void DemandaDiaria()
+{
+if (_diasLaborales != null)
+_demandaDiaria = _demandaAnual / _diasLaborales ;
+else
+_demandaDiaria = _demandaAnual / 360;
+}
+
+public double PuntoDeReorden()
+{
+DemandaDiaria()
+_puntoReorden = _demandaDiaria * _leadTime;
+return _puntoReorden;
+}
+
+public double NroDeLotesAnual()
+{
+_nroLotesAnual = _demandaAnual / _cantidadOptimaQ;
+return _nroLotesAnual;
+}
+
+public double TiempoEntreLotes()
+{
+_tiempoEntreLotes = _diasLaborales / _nroLotesAnual;
+return _tiempoEntreLotes;
+}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public class ModeloCantidadFijaConProduccion
+{
+private double _cantidadOptimaQ; //Q
+private double _costoAnualPedido; //S
+private double _costoAnualMantennimiento; //H
+private int _leadTime; //L
+private double _demandaAnual; //D
+private double _demandaDiaria; //d
+private int _diasLaborales;
+private double _costoTotal; //TC
+private double _costoUnitario; //C
+private double _puntoReorden; //R
+private double _nroLotesAnual;
+private double _tiempoEntreLotes; //T
+private double _costoTotalAnualPedido; //(D/Q).S
+private double _costoTotalAnualMantenimiento; //(Q/2).H 
+private double _costoTotalAnualDeCompras; // D*C
+private double _tasaProduccionDiaria;
+private double _tasaDemandaDiaria;
+
+public double CantidadOptimaQ()
+{
+_cantidadOptimaQ = System.Math.Sqrt( (2 * __demandaAnual * _costoAnualPedido * _tasaProduccionDiaria)/ _costoAnualMantennimiento *(_tasaProduccionDiaria - _tasaDemandaDiaria );
+return _cantidadOptimaQ;
+}
+
+public double CostoTotalAnualPedido() // igual CantidadFija
+{
+_costoTotalAnualPedido = (_demandaAnual / _cantidadOptimaQ)* _costoAnualPedido;
+return _costoTotalAnualPedido;
+}
+
+public double CostoTotalAnualMantenimiento()
+{
+_costoTotalAnualMantenimiento = (_tasaProduccionDiaria - _tasaDemandaDiaria ) * _cantidadOptimaQ * _costoAnualMantennimiento / 2 * _tasaProduccionDiaria;
+return _costoTotalAnualMantenimiento;
+}
+
+public double CostoTotalAnualDeCompras() // // igual CantidadFija
+{
+_costoTotalAnualDeCompras = _demandaAnual * _costoUnitario;
+return _costoTotalAnualDeCompras;
+}
+
+public double CostoTotal() 
+{
+_costoTotal = CostoTotalAnualDeCompras() + CostoTotalAnualMantenimiento() + CostoTotalAnualPedido();
+return _costoTotal;
+}
+
+public void DemandaDiaria() 
+{
+if (_diasLaborales != null)
+_demandaDiaria = _demandaAnual / _diasLaborales ;
+else
+_demandaDiaria = _demandaAnual / 360;
+}
+
+public double PuntoDeReorden() // igual CantidadFija
+{
+DemandaDiaria()
+_puntoReorden = _demandaDiaria * _leadTime;
+return _puntoReorden;
+}
+
+public double NroDeLotesAnual() // igual CantidadFija
+{
+_nroLotesAnual = _demandaAnual / _cantidadOptimaQ;
+return _nroLotesAnual;
+}
+
+public double TiempoEntreLotes() // igual CantidadFija
+{
+_tiempoEntreLotes = _diasLaborales / _nroLotesAnual;
+return _tiempoEntreLotes;
+}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public class ModeloCantidadFijaConServicio
+{
+private double _cantidadOptimaQ; //Q
+private double _costoAnualPedido; //S
+private double _costoAnualMantennimiento; //H
+private int _leadTime; //L
+private int _demandaAnual; //D
+private double _demandaDiaria; //d
+private int _diasLaborales;
+private double _costoTotal; //TC
+private double _costoUnitario; //C
+private double _puntoReorden; //R
+private double _nroLotesAnual;
+private double _tiempoEntreLotes; //T
+private double _costoTotalAnualPedido; //(D/Q).S
+private double _costoTotalAnualMantenimiento; //(Q/2).H 
+private double _costoTotalAnualDeCompras; // D*C
+private double _nivelServicioEsperado; //
+private double _desviacionDeDemandaDiaria; // sigma sub D - DATO
+private double _desviacionDeDemandaDuranteEntrega // sigma sub L
+
+public double CantidadOptimaQ() // igual que en Cantidad Fija
+{
+_cantidadOptimaQ = System.Math.Sqrt( (2 * __demandaAnual * _costoAnualPedido)/ _costoAnualMantennimiento);
+return _cantidadOptimaQ;
+}
+
+public double CostoTotalAnualPedido() // igual que en Cantidad Fija
+{
+_costoTotalAnualPedido = (_demandaAnual / _cantidadOptimaQ)* _costoAnualPedido;
+return _costoTotalAnualPedido;
+}
+
+public double CostoTotalAnualMantenimientoCantFijaConServicio() // COMPLETAR CON Z!
+{
+_costoTotalAnualMantenimiento = ( _cantidadOptimaQ * _costoAnualMantennimiento) / 2 + Z * _costoAnualMantennimiento * _desviacionDeDemandaDuranteEntrega * //Z;
+return _costoTotalAnualMantenimiento;
+}
+
+public double CostoTotalAnualDeCompras() // igual que en Cantidad Fija
+{
+_costoTotalAnualDeCompras = _demandaAnual * _costoUnitario;
+return _costoTotalAnualDeCompras;
+}
+
+public double CostoTotal()
+{
+_costoTotal = CostoTotalAnualDeCompras() + CostoTotalAnualMantenimiento() + CostoTotalAnualPedido();
+return _costoTotal;
+}
+
+public void DemandaDiaria()
+{
+if (_diasLaborales != null)
+_demandaDiaria = _demandaAnual / _diasLaborales ;
+else
+_demandaDiaria = _demandaAnual / 360;
+}
+
+public double PuntoDeReordenCantidadFijaConServicio() // COMPLETAR CON Z
+{
+DemandaDiaria()
+_puntoReorden = _demandaDiaria * _leadTime + _desviacionDeDemandaDuranteEntrega * //Z;
+return _puntoReorden;
+}
+
+public double NroDeLotesAnual()
+{
+_nroLotesAnual = _demandaAnual / _cantidadOptimaQ;
+return _nroLotesAnual;
+}
+
+public double TiempoEntreLotes()
+{
+_tiempoEntreLotes = _diasLaborales / _nroLotesAnual;
+return _tiempoEntreLotes;
+}
+
+public double DesviacionEstandarDuranteEntrega() // sigma sub L - Cantidad Fija con Nivel de servicio
+{
+_desviacionDeDemandaDuranteEntrega = (System.Math.Sqrt( _leadTime))* _desviacionDeDemandaDiaria;
+return _desviacionDeDemandaDuranteEntrega;
+}
+
+public double EDeZetaCantidadFijaConServicio()
+{
+double ez = 0;
+ez = ((1 - _nivelServicioEsperado) * _cantidadOptimaQ)/ _desviacionDeDemandaDuranteEntrega;
+return ez;
+}
+
+/// FALTA METODO PARA CALCULAR Z EN FUNCION DE CalculoEDeZeta()
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+public class ModeloPeriodoFijo
+{
+private double _cantidadOptimaQ; //Q
+private double _costoAnualPedido; //S
+private double _costoAnualMantennimiento; //H
+private int _leadTime; //L
+private int _demandaAnual; //D
+private double _demandaPromedio; //d
+private int _diasLaborales;
+private double _costoTotal; //TC
+private double _costoUnitario; //C
+private double _puntoReorden; //R
+private double _nroLotesAnual;
+private double _tiempoEntreRevisiones; //T
+private double _costoTotalAnualPedido; //(D/Q).S
+private double _costoTotalAnualMantenimiento; //(Q/2).H 
+private double _costoTotalAnualDeCompras; // D*C
+private double _nivelActualInvenario; // I 
+private double _desviacionDeDemandaDiaria; // sigma sub D - DATO
+private double _desviacionDeDemandaDuranteEntrega // sigma sub L
+private double _nivelDeServicio; // P
+
+public double DemandaPromedioPeriodoVulnerable() // d*(T+L) MODELO PERIODO FIJO
+{
+double d = 0;
+d = _demandaPromedio *( _leadTime * _tiempoEntreRevisiones);
+return d;
+}
+
+public double DesviacionTyL() // sigma de T+L - MODELO PERIODO FIJO
+{
+double tl = 0;
+tl = (System.Math.Sqrt( _leadTime + tiempoEntreRevisiones)) * _desviacionDeDemandaDiaria;
+return tl;
+}
+
+public double ExistenciaDeSeguridad() //FALTA REMPLAZAR Z - MODELO PERIODO FIJO
+{
+double rs = 0;
+rs = Z * DesviacionTyL()
+return rs;
+}
+
+public double CantidadOptimaQ()
+{
+_cantidadOptimaQ = DemandaPromedioPeriodoVulnerable() + ExistenciaDeSeguridad() - _nivelActualInvenario;
+return _cantidadOptimaQ;
+}
+
+public void CalculoEDeZ() // con nivel de servicio
+{
+double ez = 0;
+ez = (_demandaPromedio * _tiempoEntreRevisiones * ( 1 - _nivelDeServicio))/ DesviacionTyL();
+return ez;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

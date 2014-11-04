@@ -1,0 +1,34 @@
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Form1.resources
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Properties.Resources.resources
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\ResGen.read.1.tlog
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\ResGen.write.1.tlog
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.exe
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.pdb
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.exe
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.pdb
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedido.resources
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedidoNiverlServicio.resources
+C:\Users\xStinn\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formEleccion.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.exe
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.pdb
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.exe
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.pdb
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Form1.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedido.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedidoNiverlServicio.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formEleccion.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Properties.Resources.resources
+C:\Users\siileenT\Desktop\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.csproj.GenerateResource.Cache
+C:\Users\Fede\Desktop\Fede\BackUp Pen\Facu\TSSI\Operativa\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.exe
+C:\Users\Fede\Desktop\Fede\BackUp Pen\Facu\TSSI\Operativa\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.pdb
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.exe
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.pdb
+D:\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.exe
+D:\InvestigacionOperativa\InvestigacionOperativa\bin\Debug\InvestigacionOperativa.pdb
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Form1.resources
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedido.resources
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formCantidadFijaPedidoNiverlServicio.resources
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.formEleccion.resources
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.Properties.Resources.resources
+D:\InvestigacionOperativa\InvestigacionOperativa\obj\Debug\InvestigacionOperativa.csproj.GenerateResource.Cache
